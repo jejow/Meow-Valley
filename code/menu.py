@@ -127,3 +127,6 @@ class Menu:
 			amount_list = list(self.player.item_inventory.values()) + list(self.player.seed_inventory.values())
 			amount = amount_list[text_index]
 			self.show_entry(text_surf, amount, top, self.index == text_index)
+
+class main_menu:
+	pass
