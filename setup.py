@@ -33,12 +33,13 @@ class Setup:
         self.print_step(1, "Checking Python Version")
         
         version = sys.version_info
+        # Don't force exit on older Python versions — only warn the user.
         if version.major < 3 or (version.major == 3 and version.minor < 8):
-            print("❌ Error: Python 3.8+ diperlukan")
-            print(f"   Anda menggunakan: Python {version.major}.{version.minor}")
-            sys.exit(1)
-        
-        print(f"✅ Python {version.major}.{version.minor}.{version.micro} OK")
+            print("⚠️ Warning: Python 3.8+ recommended but not strictly required.")
+            print(f"   Anda menggunakan: Python {version.major}.{version.minor}.{version.micro}")
+        else:
+            print(f"✅ Python {version.major}.{version.minor}.{version.micro} OK")
+
         print(f"   Location: {self.python_executable}")
     
     def check_venv_exists(self):

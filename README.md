@@ -13,7 +13,7 @@ Choose your operating system below for detailed setup instructions.
 ### Prerequisites
 
 - macOS 10.13 or later (Intel or Apple Silicon)
-- Python 3.8 or later (3.12 recommended)
+- Python 3.x (3.8+ recommended, but not strictly required)
 
 ### Step 1: Install System Dependencies
 
@@ -50,6 +50,7 @@ python3 setup.py
 ```
 
 This will automatically:
+
 - ✅ Create virtual environment
 - ✅ Install all dependencies
 - ✅ Verify imports
@@ -113,7 +114,7 @@ chmod 644 font/LycheeSoda.ttf
 ### Prerequisites
 
 - Windows 10 or 11
-- Python 3.8 or later (3.12 recommended)
+- Python 3.x (3.8+ recommended, but not strictly required)
 
 ### Step 1: Install Python
 
@@ -147,6 +148,7 @@ python setup.py
 ```
 
 This will automatically:
+
 - ✅ Create virtual environment
 - ✅ Install all dependencies
 - ✅ Verify imports
@@ -200,7 +202,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ### Prerequisites
 
 - Linux (Ubuntu/Debian recommended)
-- Python 3.8 or later (3.12 recommended)
+- Python 3.x (3.8+ recommended, but not strictly required)
 
 ### Step 1: Install System Dependencies
 
@@ -237,6 +239,7 @@ python3 setup.py
 ```
 
 This will automatically:
+
 - ✅ Create virtual environment
 - ✅ Install all dependencies
 - ✅ Verify imports
@@ -288,7 +291,7 @@ xvfb-run python3 code/main.py
 | Key               | Action                      |
 | ----------------- | --------------------------- |
 | **W/A/S/D** | Move around                 |
-| **SPACE**   | Use tool (hoe/axe/water)   |
+| **SPACE**   | Use tool (hoe/axe/water)    |
 | **Q**       | Switch tool (hoe/axe/water) |
 | **LCTRL**   | Plant seed                  |
 | **E**       | Switch seed (corn/tomato)   |
@@ -302,36 +305,43 @@ These controls work identically on all platforms!
 ## 🛠️ Gameplay Mechanics
 
 ### Farming System
+
 - **Hoe**: Till soil to prepare for planting
 - **Seeds**: Plant corn or tomato with LCTRL (requires seeds in inventory)
 - **Watering Can**: Water plants for growth
 - **Harvesting**: Use hoe on mature plants to collect produce
 
 ### Tools & Resources
-| Tool | Function | Obtained |
-|------|----------|----------|
-| **Hoe** | Till soil & harvest plants | Starting tool |
-| **Axe** | Chop trees for wood & apples | Starting tool |
-| **Watering Can** | Water crops | Starting tool |
+
+| Tool                   | Function                     | Obtained      |
+| ---------------------- | ---------------------------- | ------------- |
+| **Hoe**          | Till soil & harvest plants   | Starting tool |
+| **Axe**          | Chop trees for wood & apples | Starting tool |
+| **Watering Can** | Water crops                  | Starting tool |
 
 ### Inventory System
+
 **Items (Harvestable)**:
+
 - Wood (from trees)
 - Apples (from trees)
 - Corn (from crops)
 - Tomato (from crops)
 
 **Seeds (Plantable)**:
+
 - Corn seed (cost: $4)
 - Tomato seed (cost: $5)
 
 **Selling Prices**:
+
 - Wood: $4
 - Apple: $2
 - Corn: $10
 - Tomato: $20
 
 ### Day/Night Cycle
+
 - Sleep in your bed to advance to next day
 - Plants grow over time based on growth speed multiplier
 - Weather randomly changes each day (rain affects crop growth)
@@ -340,14 +350,14 @@ These controls work identically on all platforms!
 
 ## 📋 Requirements
 
-The project requires only 2 Python packages:
+The project requires only 2 Python packages (no exact version required):
 
 ```
-pygame==2.6.1      # 2D game engine with SDL2 backend
-pytmx==3.32.5      # Tiled map format parser
+pygame      # 2D game engine with SDL2 backend
+pytmx       # Tiled map format parser
 ```
 
-These are specified in `requirements.txt` and installed automatically when you run:
+These are specified in `requirements.txt` (un-pinned) and installed automatically when you run:
 
 ```bash
 pip install -r requirements.txt
@@ -425,6 +435,7 @@ venv/bin/python code/main.py
 ```
 
 That's it! The setup script handles:
+
 - Creating virtual environment
 - Installing all dependencies
 - Verifying everything works
@@ -486,23 +497,10 @@ venv\Scripts\activate       # Windows
 
 ## 🎓 Learning Resources
 
-- **Pygame Documentation**: https://www.pygame.org/docs/
-- **Pytmx GitHub**: https://github.com/bitcraft/pytmx
-- **Tiled Map Editor**: https://www.mapeditor.org/
-- **Python Virtual Environments**: https://docs.python.org/3/tutorial/venv.html
-
----
-
-## 📝 License
-
-This project is based on the PyDew-Valley repository by clear-code-projects and customized as Meow Valley.
-
-Original Project: https://github.com/clear-code-projects/PyDew-Valley
-
-**Note**: To use this project with your own repository, update the git remote URL:
-```bash
-git remote set-url origin <your-repository-url>
-```
+- [Pygame Documentation]([https://www.pygame.org/docs/](Pygame))
+- [Pytmx]([https://www.pygame.org/docs/](Pygame))
+- [Tiled Map Editor](https://www.mapeditor.org/)
+- [Python Virtual Environments](https://docs.python.org/3/tutorial/venv.html)
 
 ---
 
@@ -519,45 +517,15 @@ git remote set-url origin <your-repository-url>
 
 ---
 
----
-
-## 🔧 Recent Fixes & Updates
-
-### Bug Fixes
-- ✅ Fixed AttributeError in tree sprite handling during day transition
-- ✅ Improved sprite collision detection
-- ✅ Optimized plant growth system
-
-### Known Issues & Workarounds
-- None currently reported
-
----
-
 ## 📚 Development Notes
 
 ### Code Architecture
+
 - **MVC Pattern**: Model (soil layer, sprites) - View (display) - Controller (player input)
 - **Sprite Groups**: Organized by type (trees, collision, interaction, etc.)
 - **Camera System**: Dynamic camera follows player
 - **Event System**: Timer-based events for actions
 
-### Future Features (Potential)
-- [ ] More crop varieties
-- [ ] Animal husbandry
-- [ ] Quest system
-- [ ] Multiplayer support
-- [ ] Expanded UI customization
-
 ---
 
-**Last Updated**: November 4, 2025
-
-**Status**: ✅ Ready to Play!
-
-**Repository**: https://github.com/jejow/Meow-Valley
-
-Enjoy your farming simulation! 🌾✨
-
----
-
-*For additional platform-specific help, check the troubleshooting sections above.*
+**Repository**: [Github](https://github.com/jejow/Meow-Valley)
