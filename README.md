@@ -288,14 +288,53 @@ xvfb-run python3 code/main.py
 | Key               | Action                      |
 | ----------------- | --------------------------- |
 | **W/A/S/D** | Move around                 |
-| **SPACE**   | Use tool                    |
+| **SPACE**   | Use tool (hoe/axe/water)   |
 | **Q**       | Switch tool (hoe/axe/water) |
 | **LCTRL**   | Plant seed                  |
 | **E**       | Switch seed (corn/tomato)   |
 | **ENTER**   | Interact (sleep/shop)       |
-| **ESC**     | Open/close menu             |
+| **ESC**     | Open/close menu (in shop)   |
 
 These controls work identically on all platforms!
+
+---
+
+## 🛠️ Gameplay Mechanics
+
+### Farming System
+- **Hoe**: Till soil to prepare for planting
+- **Seeds**: Plant corn or tomato with LCTRL (requires seeds in inventory)
+- **Watering Can**: Water plants for growth
+- **Harvesting**: Use hoe on mature plants to collect produce
+
+### Tools & Resources
+| Tool | Function | Obtained |
+|------|----------|----------|
+| **Hoe** | Till soil & harvest plants | Starting tool |
+| **Axe** | Chop trees for wood & apples | Starting tool |
+| **Watering Can** | Water crops | Starting tool |
+
+### Inventory System
+**Items (Harvestable)**:
+- Wood (from trees)
+- Apples (from trees)
+- Corn (from crops)
+- Tomato (from crops)
+
+**Seeds (Plantable)**:
+- Corn seed (cost: $4)
+- Tomato seed (cost: $5)
+
+**Selling Prices**:
+- Wood: $4
+- Apple: $2
+- Corn: $10
+- Tomato: $20
+
+### Day/Night Cycle
+- Sleep in your bed to advance to next day
+- Plants grow over time based on growth speed multiplier
+- Weather randomly changes each day (rain affects crop growth)
 
 ---
 
@@ -480,9 +519,42 @@ git remote set-url origin <your-repository-url>
 
 ---
 
+---
+
+## 🔧 Recent Fixes & Updates
+
+### Bug Fixes
+- ✅ Fixed AttributeError in tree sprite handling during day transition
+- ✅ Improved sprite collision detection
+- ✅ Optimized plant growth system
+
+### Known Issues & Workarounds
+- None currently reported
+
+---
+
+## 📚 Development Notes
+
+### Code Architecture
+- **MVC Pattern**: Model (soil layer, sprites) - View (display) - Controller (player input)
+- **Sprite Groups**: Organized by type (trees, collision, interaction, etc.)
+- **Camera System**: Dynamic camera follows player
+- **Event System**: Timer-based events for actions
+
+### Future Features (Potential)
+- [ ] More crop varieties
+- [ ] Animal husbandry
+- [ ] Quest system
+- [ ] Multiplayer support
+- [ ] Expanded UI customization
+
+---
+
 **Last Updated**: November 4, 2025
 
 **Status**: ✅ Ready to Play!
+
+**Repository**: https://github.com/jejow/Meow-Valley
 
 Enjoy your farming simulation! 🌾✨
 
